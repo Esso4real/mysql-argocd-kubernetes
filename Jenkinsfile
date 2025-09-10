@@ -36,9 +36,9 @@ pipeline {
                         ).trim()
 
                         if (prExists != "0") {
-                            error "⚠️ Pull request already exists for branch '${BRANCH}' → exiting pipeline."
+                            error "Pull request already exists for branch '${BRANCH}' → exiting pipeline."
                         } else {
-                            echo "✅ No existing PR found — continuing pipeline..."
+                            echo "No existing PR found — continuing pipeline..."
                         }
                     }
                 }
@@ -144,7 +144,7 @@ pipeline {
                 [pattern: 'k8s/**', type: 'EXCLUDE']
             ])
         }
-        success { echo "✅ Pipeline completed successfully!" }
-        failure { echo "❌ Pipeline failed. Check logs for details." }
+        success { echo "Pipeline completed successfully!" }
+        failure { echo "Pipeline failed. Check logs for details." }
     }
 }
